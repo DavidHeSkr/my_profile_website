@@ -91,7 +91,6 @@ target1.click();
 */
 
 var divs = document.getElementsByTagName('div');
-
 // find out all those divs having class C
 for(var i = 0; i < divs.length; i++)
 {
@@ -116,6 +115,7 @@ var p1 = document.getElementById("p1")
 var p2 = document.getElementById("p2")
 var p3 = document.getElementById("p3")
 var inflater = document.getElementById("inflated")
+//inflater.setAttribute('style', 'backgroundColor: gray');
 var defaultText = document.createElement("div")
 inflater.innerHTML = mySelf;
 
@@ -135,6 +135,8 @@ p1.addEventListener("mouseover", function(){
 
 p2.addEventListener("mouseover", function(){
   //inflater.innerHTML = myAchivement;
+  //var format = document.createElement("div");
+  //format.setAttribute('style', 'line-clamp:3')
   splitSentence(inflater, myAchivement);
   var line_breaker = document.createElement("br")
   inflater.appendChild(line_breaker);
@@ -228,6 +230,7 @@ function submit_comment(title, content, author){
   console.log("666666666");
   console.log(title + content + author);
 }
+
 var request = new XMLHttpRequest();
 var url = "/insert";
 request.onreadystatechange = function () {

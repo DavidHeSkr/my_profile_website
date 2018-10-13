@@ -146,11 +146,11 @@ router.get('/get-data', function(req, res, next) {
     }, function() {
       if(comments.length>1){
         comments = comments.substring(0,comments.length-1) + "]"
+        console.log(resultArray);
+        db.close();
+        //res.render('index', {loveme: "", comments: resultArray});
+        res.send(comments);
       }
-      console.log(resultArray);
-      db.close();
-      //res.render('index', {loveme: "", comments: resultArray});
-      res.send(comments);
     });
   });
 });
